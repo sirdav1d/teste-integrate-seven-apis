@@ -12,7 +12,7 @@ export async function getData() {
 		},
 	);
 
-	const data = resp.json();
+	const data = await resp.json();
 
 	return data;
 }
