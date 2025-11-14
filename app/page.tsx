@@ -1,0 +1,22 @@
+/** @format */
+
+import { getData } from '@/actions/get-data';
+
+export default async function Home() {
+	const data = await getData();
+	return (
+		<div className='flex min-h-screen items-center justify-center bg-zinc-50  dark:bg-black'>
+			<main className='flex w-full flex-col items-center justify-center py-32 px-16 bg-white dark:bg-black sm:items-start'>
+				<div className='max-w-3xl mx-auto flex flex-col gap-5'>
+					<h1 className='font-sans text-5xl tracking-wide text-center w-full'>
+						Dados extraídos do Seven Apis
+					</h1>
+					<p className='text-lg'>
+						Dados:{' '}
+						<pre className='text-xs'>{JSON.stringify(data, null, 2)}</pre>
+					</p>
+				</div>
+			</main>
+		</div>
+	);
+}
