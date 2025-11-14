@@ -1,9 +1,14 @@
 /** @format */
 
 import { getData } from '@/actions/get-data';
+import { Suspense } from 'react';
+
+async function Data() {
+	const data = await getData();
+	return <pre className='text-xs'>{JSON.stringify(data, null, 2)}</pre>;
+}
 
 export default async function Home() {
-	const data = await getData();
 	return (
 		<div className='flex min-h-screen items-center justify-center bg-zinc-50  dark:bg-black'>
 			<main className='flex w-full flex-col items-center justify-center py-32 px-16 bg-white dark:bg-black sm:items-start'>
@@ -12,7 +17,9 @@ export default async function Home() {
 						Dados extraídos do Seven Apis
 					</h1>
 					<p className='text-lg'>Dados: </p>
-					<pre className='text-xs'>{JSON.stringify(data, null, 2)}</pre>
+					<Suspense>
+						<Data />
+					</Suspense>
 				</div>
 			</main>
 		</div>
