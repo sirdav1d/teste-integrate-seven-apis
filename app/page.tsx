@@ -8,7 +8,7 @@ async function Data() {
 	return <pre className='text-xs'>{JSON.stringify(data, null, 2)}</pre>;
 }
 
-export default async function Home() {
+export default function Home() {
 	return (
 		<div className='flex min-h-screen items-center justify-center bg-zinc-50  dark:bg-black'>
 			<main className='flex w-full flex-col items-center justify-center py-32 px-16 bg-white dark:bg-black sm:items-start'>
