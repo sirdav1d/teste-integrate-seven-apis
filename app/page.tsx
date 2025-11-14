@@ -11,10 +11,8 @@ export default async function Home() {
 					<h1 className='font-sans text-5xl tracking-wide text-center w-full'>
 						Dados extraídos do Seven Apis
 					</h1>
-					<p className='text-lg'>
-						Dados:{' '}
-						<pre className='text-xs'>{JSON.stringify(data, null, 2)}</pre>
-					</p>
+					<p className='text-lg'>Dados: </p>
+					<pre className='text-xs'>{JSON.stringify(data, null, 2)}</pre>
 				</div>
 			</main>
 		</div>
