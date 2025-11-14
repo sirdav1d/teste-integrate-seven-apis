@@ -17,7 +17,7 @@ export default async function Home() {
 						Dados extraídos do Seven Apis
 					</h1>
 					<p className='text-lg'>Dados: </p>
-					<Suspense>
+					<Suspense fallback={'carregando...'}>
 						<Data />
 					</Suspense>
 				</div>
